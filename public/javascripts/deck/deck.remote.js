@@ -4,7 +4,7 @@
 			server: 'http://192.168.1.100',
 			port: 3000
 		},
-		joined = false,
+		joined = true,
 		current_slide = 0,
 		key = 'eb0a191797624dd3a48fa681d3061212',
 		socket,
@@ -118,13 +118,13 @@
 					$d.bind('deck.change', function(e, prev, next){
 						socket.emit('change', {current: next});
 					});
-					UI.showMasterFeedback('Session started!');
+					UI.showMasterFeedback('Bienvenido!');
 					setTimeout(function(){
 						UI.hideMessages();
 					}, 3000);
 				}
 				else {
-					UI.showMasterFeedback('Wrong password!');
+					UI.showMasterFeedback('Clave Incorrecta');
 				}
 			});
 		}

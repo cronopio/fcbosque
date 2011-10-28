@@ -11,8 +11,7 @@ var app = module.exports = express.createServer(),
       url: require('url'),
       crypto: require('crypto')
     }
-    decks = {},
-    max_inactive_time = 1800000; // half-hour;
+    decks = {};
 
 // Configuration
 
@@ -44,9 +43,7 @@ io.configure('production', function(){
 });
 
 io.sockets.on('connection', function(client){
-  console.log('Conectado');
   client.on('join', function(data){
-    console.log('Ingresando...');
     var id = getIdFromUrl(data.url),
       deck = decks[id];
     
@@ -73,15 +70,12 @@ app.get('/', function(req, res){
   });
 });
 
-app.listen(3000);
-console.log("Express server listening on port %d", app.address().port);
+app.listen(process.env.PORT || 3000);
+console.log("Presentacion corriendo en el puerto %d", app.address().port);
 
 /**
  * Funciones para ayudar al socket.io
  */
-setInterval(function(){
-  clearInactiveSessions();
-}, max_inactive_time);
 
 function setupMaster(client, deck) {
   client.on('master', function(data){
@@ -89,17 +83,20 @@ function setupMaster(client, deck) {
       client.emit('master', true);
       deck.has_master = true;
 
-      io.sockets.in(deck.id).emit('notify', { master: true });
+      //io.sockets.in(deck.id).emit('notify', { master: true });
+      client.broadcast.emit('notify', { master: true });
 
       client.on('change', function(data){
         deck.current = data.current;
         deck.timestamp = Date.now();
-        io.sockets.in(deck.id).emit('slide', deck.current);
+        //io.sockets.in(deck.id).emit('slide', deck.current);
+        client.broadcast.emit('slide', deck.current);
       });
 
       client.on('disconnect', function(){
         deck.has_master = false;
-        io.sockets.in(deck.id).emit('notify', { master: false });
+        //io.sockets.in(deck.id).emit('notify', { master: false });
+        client.broadcast.emit('notify', { master: false });
       });
     }
     else {
