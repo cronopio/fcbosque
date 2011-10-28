@@ -135,10 +135,10 @@
 				}
 				current_slide = current;
 			}).on('notify', function(data){
-				if (data.master && !joined) {
+				if (data.master) {
 					UI.showJoinMessage();
 				}
-				else if (joined) {
+				else {
 					UI.showLeaveMessage();
 				}
 
