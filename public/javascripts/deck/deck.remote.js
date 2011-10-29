@@ -1,8 +1,8 @@
 (function($, deck, undefined) {
 	var $d = $(document),
 		config = {
-			server: 'http://192.168.1.100',
-			port: 3000
+			server: 'http://fcbosque.nodejitsu.com',
+			port: null
 		},
 		joined = true,
 		current_slide = 0,
