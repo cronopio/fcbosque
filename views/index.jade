@@ -65,3 +65,45 @@ section.slide
       h3 8000 lineas de C++, 2000 lineas de JS
     li
       h3 En 2009, 14 desarrolladores del core. Hoy 226
+section.slide
+  h1 ESPERA!!
+    br
+    | ¿JS en Server?
+    br
+    | WTF?!
+section.slide
+  h2 Stack
+  p [imagen del stack]
+section.slide
+  h1 Orientado a Eventos.
+section.slide
+  h2 Bloqueo de I/O
+  hr
+  h3 Muchas aplicaciones web tienen codigo como este:
+  blockquote
+    span(style="color:#66CCFF") var 
+    | result = db.query(
+    span(style="color:#990000") 'select * from T'
+    | );
+    br
+    code(style="color:#009900")
+      // Uso el $result
+  h3 ¿Y que hace el software mientras se hacen las consultas a la base de datos?
+section.slide
+  h1 En la mayoría de casos, solo esperar la respuesta.
+section.slide
+  h1 El buen software puede ser 
+    br
+    em multi-tarea.
+section.slide
+  h1 Otros 
+    em hilos 
+    | de ejecucion pueden correr mientras esperan. 
+section.slide
+  h1 ¿Es lo mejor que podemos hacer?
+section.slide
+  h1 Demosle una mirada a 
+    a(href="http://www.apache.org/") Apache 
+    | y 
+    a(href="http://nginx.org/") Nginx
+  
