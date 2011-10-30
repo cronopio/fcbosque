@@ -1,5 +1,5 @@
 section.slide
-  h2 NodeJS
+  h2 Node.JS
   hr
   h3 Daniel Aristizabal Romero
   h5 Fundacion Casa del Bosque
@@ -39,7 +39,7 @@ section.slide
   h1 ¿Node.js?
   
 section.slide
-  h2 ¿Qué es NodeJS?
+  h2 ¿Qué es Node.JS?
   hr
   p Entorno de desarrollo orientado a eventos de entrada/salida (I/O) basado en 
     a(href="http://code.google.com/p/v8/") V8 
@@ -72,9 +72,6 @@ section.slide
     br
     | WTF?!
 section.slide
-  h2 Stack
-  p [imagen del stack]
-section.slide
   h1 Orientado a Eventos.
 section.slide
   h2 Bloqueo de I/O
@@ -82,12 +79,12 @@ section.slide
   h3 Muchas aplicaciones web tienen codigo como este:
   blockquote
     span(style="color:#66CCFF") var 
-    | result = db.query(
+    | r = db.query(
     span(style="color:#990000") 'select * from T'
     | );
     br
     code(style="color:#009900")
-      // Uso el $result
+      // uso el $r
   h3 ¿Y qué hace el software mientras se hacen las consultas a la base de datos?
 section.slide
   h1 En la mayoría de casos, solo esperar la respuesta.
@@ -109,8 +106,94 @@ section.slide
 section.slide
   h2 Apache vs Nginx
   h3 Concurrencia vs Peticiones/s
-  p [grafica 1]
+  img(src="http://www.webfaction.com/blog/nginx-apache-reqs-sec.png")
+  .sources Fuentes: 
+    a(href="http://blog.webfaction.com/a-little-holiday-present")[1]
 section.slide
   h2 Apache vs Nginx
   h3 Memoria vs Peticiones/s
-  p [grafica 2]
+  img(src="http://www.webfaction.com/blog/nginx-apache-memory.png")
+  .sources Fuentes: 
+    a(href="http://blog.webfaction.com/a-little-holiday-present")[1]
+section.slide
+  h2 Apache vs Nginx
+  h3 ¿La diferencia?
+  ul
+    li.slide 
+      strong Apache 
+      | usa 
+      em un hilo por conexión.
+    li.slide
+      strong Nginx 
+      em no usa hilos. 
+      | Usa un bucle de eventos (event loop).
+  ul
+    li.slide Los cambios de 
+      em contexto 
+      | no son gratis.
+    li.slide Las pilas de ejecución de tareas requieren memoria.
+  ul
+    li.slide Para concurrencia masiva, 
+      mark no se puede 
+      | usar un hilo del sistema operativo por cada conexión.
+  ul
+    li.slide La concurrencia usando hilos, es una abstraccion con fugas.
+section.slide
+  h2 Concurrencia de hilos
+  h3 Código como este:
+  blockquote
+    span(style="color:#66CCFF") var 
+    | r = db.query(
+    span(style="color:#990000") 'select * from T'
+    | );
+    br
+    code(style="color:#009900")
+      // uso el $r
+  h3 
+    mark Bloquea el proceso entero 
+    | o implica 
+    mark la ejecución de pilas de tareas.
+section.slide
+  h3 Pero código como este:
+  blockquote
+    | db.query(
+    span(style="color:#990000") "select ..."
+    | , 
+    span(style="color:#66CCFF") function
+    | (r) {
+    br
+    code(style="color:#009900;margin-left:10px")
+      // uso el r
+    br
+    | });
+  h3 Permite al programa regresar al bucle de eventos inmediatamente.
+  h3 ... y no necesita nada mas.
+section.slide
+  h1 Asi es como debe hacerse la entrada/salida (I/O)
+section.slide
+  h1 ...mmm ¿bucle de eventos?, me suena a
+    br
+    | JavaScript!
+section.slide
+  h2 JavaScript
+  h3 JavaScript esta especialmente diseñado para ser usado como un bucle de eventos (evento loop):
+  ul
+    li.slide Funciones anónimas, 
+      em closures.
+    li.slide Solo un 
+      em callback 
+      | al mismo tiempo.
+    li.slide Entrada/Salida (I/O) a través de eventos en el DOM.
+    li.slide La cultura del JavaScript normalmente usa programación orientada a eventos.
+    .slide
+      blockquote
+        | “A language that doesn’t have everything is
+        | actually easier to program in than some that do.”
+        br
+        em(style="margin-left: 3em")    – Dennis Ritchie
+section.slide
+  h1 Volvamos a Node.JS...
+section.slide
+  h2 Stack
+  img(src="/images/Stack.png")
+    
