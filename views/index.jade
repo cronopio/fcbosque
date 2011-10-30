@@ -1,7 +1,7 @@
 section.slide
   h2 Node.JS
   hr
-  h3 Daniel Aristizabal Romero
+  h3 Daniel Aristizabal Romero [cronopio]
   h5 Fundacion Casa del Bosque
   img(src="/images/node_turtle.png")
   
@@ -111,7 +111,7 @@ section.slide
     a(href="http://blog.webfaction.com/a-little-holiday-present")[1]
 section.slide
   h2 Apache vs Nginx
-  h3 Memoria vs Peticiones/s
+  h3 Memoria RAM vs Peticiones/s
   img(src="http://www.webfaction.com/blog/nginx-apache-memory.png")
   .sources Fuentes: 
     a(href="http://blog.webfaction.com/a-little-holiday-present")[1]
@@ -176,7 +176,7 @@ section.slide
     | JavaScript!
 section.slide
   h2 JavaScript
-  h3 JavaScript esta especialmente diseñado para ser usado como un bucle de eventos (evento loop):
+  h3 JavaScript esta especialmente diseñado para ser usado como un bucle de eventos (event loop):
   ul
     li.slide Funciones anónimas, 
       em closures.
@@ -187,8 +187,8 @@ section.slide
     li.slide La cultura del JavaScript normalmente usa programación orientada a eventos.
     .slide
       blockquote
-        | “A language that doesn’t have everything is
-        | actually easier to program in than some that do.”
+        | “Un lenguaje que no tenga todo, 
+        | es realmente facil programarlo para que lo haga.”
         br
         em(style="margin-left: 3em")    – Dennis Ritchie
 section.slide
@@ -196,4 +196,107 @@ section.slide
 section.slide
   h2 Stack
   img(src="/images/Stack.png")
-    
+section.slide
+  h1 Instalación.
+    br
+    small (en gnu/linux)
+section.slide
+  h2 Instalación
+  h3 Dependencias:
+  ul
+    li
+      strong python  
+      small
+        em (recomendado 2.6)
+    li
+      strong libssl-dev 
+      small
+        em (si deseas usar SSL/TLS)
+section.slide
+  h2 Instalación
+  h3 Descargando las fuentes:
+  h4 Usando Git.
+  pre
+    code
+       git clone git://github.com/joyent/node.git
+       cd node/
+       git checkout v0.4.12
+  h4 Descargando un tarball.
+  pre
+    code
+      wget -c https://github.com/joyent/node/tarball/v0.4.12 -O node-0.4.12.tar.gz
+      tar zxvf node-0.4.12.tar.gz
+      cd joyent-node-41e5762
+  .sources
+    a(href="https://github.com/joyent/node/wiki/Installation") Guía de Instalación Oficial 
+    | -  
+    a(href="http://apptob.org/") Script para instalación en Ubuntu.
+section.slide
+  h2 Instalación
+  h3 Construcción:
+  h4 Como usuario sin privilegios.
+  pre
+    code
+      mkdir ~/local
+      ./configure --prefix=~/local
+      make -j2 # dependiendo del numero de cores.
+      make install
+      echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc
+      source ~/.bashrc
+  h4 Como root.
+  pre
+    code
+      su -
+      ./configure
+      make -j2 # dependiendo del numero de cores.
+      make install
+section.slide
+  h2 Instalación
+  h3 Node Package Manager (NPM)
+  pre
+    code
+      curl http://npmjs.org/install.sh | sh
+  h3 Instalando modulos o paquetes.
+  pre
+    code
+      npm install express
+  .sources
+    a(href="http://www.npmjs.org/") Página NPM
+section.slide
+  h1 ¿Preguntas?
+section.slide
+  h1 Demos!!!
+    br
+    | :-)
+section.slide
+  h2 Hola Mundo.
+  script(src="https://gist.github.com/1325350.js?file=sys.js")
+section.slide
+  h2 Callback
+  script(src="https://gist.github.com/1325350.js?file=exit.js")
+section.slide
+  h2 Socket TCP
+  h3 Servidor
+  script(src="https://gist.github.com/1325350.js?file=tcp.js")
+  h3 Cliente
+  pre
+    code telnet localhost 8000
+section.slide
+  h2 Consulta de dominios.
+  h3 Servidor
+  script(src="https://gist.github.com/1325350.js?file=dns.js")
+  h3 Cliente
+  pre
+    code
+     telnet localhost 8000
+     ip fcbosque.org
+     salir
+section.slide
+  h2 Servidor Web
+  h3 Servidor
+  script(src="https://gist.github.com/1325350.js?file=http.js")
+  h3 Cliente
+  pre
+    code http://localhost:4000/
+section.slide
+  h1 Gracias!!
