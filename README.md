@@ -1,7 +1,11 @@
-Slides para la charla sobre NodeJS.
+Slides para la charla sobre NodeJS y JavaScript.
 
 La charla será el dia Jueves, 3 de noviembre de 2011.
 
+## Charlas
+
+* JavaScript del lado del servidor usando Node.JS
+* La web como plataforma de desarrollo
 
 ## Agradecimientos.
 Thanks to [Caleb Troughton] (https://github.com/imakewebthings) for bulding [deck.js](http://imakewebthings.github.com/deck.js/), a modern presentation tool.
