@@ -65,9 +65,11 @@ io.sockets.on('connection', function(client){
 // Routes
 
 app.get('/', function(req, res){
-  res.render('index', {
-    title: 'Express'
-  });
+  res.render('index');
+});
+
+app.get('/nodejs', function(req, res) {
+  res.render('cronopio/index', { layout:'cronopio/layout' });
 });
 
 app.listen(process.env.PORT || 3000);
