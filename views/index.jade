@@ -4,6 +4,13 @@ section.slide
   h3 Daniel Aristizabal Romero [cronopio]
   h5 Fundacion Casa del Bosque
   img(src="/images/node_turtle.png")
+  .sources
+    h5
+      a(href="mailto:aristizabal.daniel@gmail.com") aristizabal.daniel@gmail.com
+      br
+      a(href="http://gplus.to/cronopio") www.gplus.to/cronopio
+      br
+      a(href="http://twitter.com/cronopio2") @cronopio2
   
 section.slide
   h1 Introducción.
@@ -114,12 +121,14 @@ section.slide
 
 section.slide
   h2 Apache vs Nginx
+  hr
   h3 Memoria RAM vs Conexiones Concurrentes
   img(src="http://www.webfaction.com/blog/nginx-apache-memory.png")
   .sources Fuentes: 
     a(href="http://blog.webfaction.com/a-little-holiday-present")[1]
 section.slide
   h2 Apache vs Nginx
+  hr
   h3 ¿La diferencia?
   ul
     li.slide 
@@ -143,6 +152,7 @@ section.slide
     li.slide La concurrencia usando hilos, es una abstraccion con fugas.
 section.slide
   h2 Concurrencia de hilos
+  hr
   h3 Código como este:
   blockquote
     span(style="color:#66CCFF") var 
@@ -157,6 +167,8 @@ section.slide
     | o implica 
     mark la ejecución de pilas de tareas.
 section.slide
+  h2 Concurrencia por Eventos
+  hr
   h3 Pero código como este:
   blockquote
     | db.query(
@@ -179,6 +191,7 @@ section.slide
     | JavaScript!
 section.slide
   h2 JavaScript
+  hr
   h3 JavaScript esta especialmente diseñado para ser usado como un bucle de eventos (event loop):
   ul
     li.slide Funciones anónimas, 
@@ -198,6 +211,7 @@ section.slide
   h1 Volvamos a Node.JS...
 section.slide
   h2 Stack
+  hr
   img(src="/images/Stack.png")
 section.slide
   h1 Instalación.
@@ -205,6 +219,7 @@ section.slide
     small (en gnu/linux)
 section.slide
   h2 Instalación
+  hr
   h3 Dependencias:
   ul
     li
@@ -217,6 +232,7 @@ section.slide
         em (si deseas usar SSL/TLS)
 section.slide
   h2 Instalación
+  hr
   h3 Descargando las fuentes:
   h4 Usando Git.
   pre
@@ -236,6 +252,7 @@ section.slide
     a(href="http://apptob.org/") Script para instalación en Ubuntu.
 section.slide
   h2 Instalación
+  hr
   h3 Construcción:
   h4 Como usuario sin privilegios.
   pre
@@ -255,6 +272,7 @@ section.slide
       make install
 section.slide
   h2 Instalación
+  hr
   h3 Node Package Manager (NPM)
   pre
     code
@@ -266,19 +284,21 @@ section.slide
   .sources
     a(href="http://www.npmjs.org/") Página NPM
 section.slide
-  h1 ¿Preguntas?
+  h1 ¿Más Preguntas?
 section.slide
   h1 Demos!!!
     br
     | :-)
 section.slide
   h2 Hola Mundo.
+  hr
   script(src="https://gist.github.com/1325350.js?file=sys.js")
 section.slide
   h2 Callback
   script(src="https://gist.github.com/1325350.js?file=exit.js")
 section.slide
   h2 Socket TCP
+  hr
   h3 Servidor
   script(src="https://gist.github.com/1325350.js?file=tcp.js")
   h3 Cliente
@@ -286,6 +306,7 @@ section.slide
     code telnet localhost 8000
 section.slide
   h2 Consulta de dominios.
+  hr
   h3 Servidor
   script(src="https://gist.github.com/1325350.js?file=dns.js")
   h3 Cliente
@@ -296,6 +317,7 @@ section.slide
      salir
 section.slide
   h2 Servidor Web
+  hr
   h3 Servidor
   script(src="https://gist.github.com/1325350.js?file=http.js")
   h3 Cliente
@@ -303,3 +325,12 @@ section.slide
     code http://localhost:4000/
 section.slide
   h1 Gracias!!
+  .sources
+    h3 Daniel Aristizabal Romero
+    hr
+    h5
+      a(href="mailto:aristizabal.daniel@gmail.com") aristizabal.daniel@gmail.com
+      br
+      a(href="http://gplus.to/cronopio") www.gplus.to/cronopio
+      br
+      a(href="http://twitter.com/cronopio2") @cronopio2
