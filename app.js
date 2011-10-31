@@ -72,7 +72,7 @@ app.get('/nodejs', function(req, res) {
   res.render('cronopio/index', { layout:'cronopio/layout' });
 });
 
-app.get('/evolucion', function(req, res) {
+app.get('/web-dev', function(req, res) {
   res.sendfile(__dirname + '/views/arpunk/index.html');
 });
 
