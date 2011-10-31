@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=1024, user-scalable=no">
 	
 	<!-- Core and extension CSS files -->
-	<link rel="stylesheet" href="/stylesheets/deck/core/deck.core.css">
+	<link rel="stylesheet" href="/stylesheets/deck/deck.core.css">
 	<link rel="stylesheet" href="/stylesheets/deck/extensions/navigation/deck.navigation.css">
 	<link rel="stylesheet" href="/stylesheets/deck/extensions/status/deck.status.css">
 	<link rel="stylesheet" href="/stylesheets/deck/extensions/hash/deck.hash.css">
@@ -394,20 +394,21 @@
 
 <a href="." title="Permalink to this slide" class="deck-permalink">#</a>
 
-<script src="javascripts/jquery.min.js"></script>
+<script src="javascripts/jquery-1.6.4.min.js"></script>
 
 <!-- Deck Core and extensions -->
-<script src="javascripts/deck/core/deck.core.js"></script>
-<script src="javascripts/deck/extensions/status/deck.status.js"></script>
-<script src="javascripts/deck/extensions/status/deck.remote.js"></script>
-<script src="javascripts/deck/extensions/navigation/deck.navigation.js"></script>
-<script src="javascripts/deck/extensions/hash/deck.hash.js"></script>
-<script src="javascripts/deck/extensions/codemirror/deck.codemirror.js"></script>
+<script src="javascripts/deck/deck.core.js"></script>
+<script src="javascripts/deck/deck.status.js"></script>
+<script src="javascripts/deck/deck.remote.js"></script>
+<script src="javascripts/deck/deck.navigation.js"></script>
+<script src="javascripts/deck/deck.hash.js"></script>
+<script src="javascripts/deck/deck.codemirror.js"></script>
 
 <!-- Specific to this page -->
 <script type="text/javascript">
   $(function() {
   	$.deck('.slide');
+  	$.deck('remote');
   });
 </script>
 
