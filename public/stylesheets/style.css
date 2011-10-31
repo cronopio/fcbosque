@@ -26,3 +26,20 @@ html {
   padding: 20px;
   width: 45%;
 }
+
+a img {
+  display: block;
+  margin: 0 auto;
+  border: 5px solid white;
+}
+
+a:hover img {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+  border: 5px solid black
+}
+
+a:hover {
+  text-decoration: none;
+}
