@@ -30,7 +30,33 @@
 </head>
 
 <body class="deck-container">
-  
+
+<!-- agrego el form para ser master -->
+<div class="deck-remote-join-message">
+  <p>Hay una presentacion disponible, desea ingresar a verla?</p>
+  <p class="deck-remote-links">
+    <a href="#" class="deck-remote-ignore-link"> Cancelar </a> 
+    | 
+    <a href="#" class="deck-remote-join-link"> Ingresar</a>
+  </p>
+</div>
+<div class="deck-remote-leave-message">
+  <p>La presentación ha terminado.</p>
+  <p class="deck-remote-links">
+    <a href="#" class="deck-remote-close-link">Cerrar</a>
+  </p>
+</div>
+<div class="deck-remote-master-message">
+  <p>La clave es...</p>
+  <p class="deck-remote-master-feedback">
+    <form action="" class="deck-remote-master-form">
+      <p><input type="password" class="deck-remote-password"/></p>
+      <br>
+      <p><input type="submit" value="Iniciar Sesion"/></p>
+    </form>
+  </p>
+</div>
+
 <div class="slide" id="title-slide">
 	<h1>La web como plataforma de desarrollo</h1>
 	<ul>
