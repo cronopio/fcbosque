@@ -2,7 +2,7 @@
 	var $d = $(document),
 		config = {
 			server: 'http://fcbosque.nodejitsu.com',
-			port: null
+			port: 80
 		},
 		joined = true,
 		current_slide = 0,
