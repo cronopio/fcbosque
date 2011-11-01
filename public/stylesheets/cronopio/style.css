@@ -503,3 +503,12 @@ body.deck-container .deck-status {
   display:none;
   font-style:italic;
 }
+
+.deck-container input[type="submit"] {
+  font-size: 200%;
+}
+
+.deck-container input[type="password"] {
+  width: 280px;
+  font-size: 200%;
+}
