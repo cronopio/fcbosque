@@ -174,3 +174,15 @@
   display:none;
   font-style:italic;
 }
+
+/*
+ * CSS para fix al mobile
+ */
+.deck-container input[type="submit"] {
+  font-size: 200%;
+}
+
+.deck-container input[type="password"] {
+  width: 280px;
+  font-size: 200%;
+}
