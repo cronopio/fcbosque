@@ -76,6 +76,10 @@ app.get('/web-dev', function(req, res) {
   res.sendfile(__dirname + '/views/arpunk/index.html');
 });
 
+app.get('/artedigital', function(req, res) {
+  res.render('lili/index', { layout: 'lili/layout' });
+});
+
 app.listen(process.env.PORT || 3000);
 console.log("Presentacion corriendo en el puerto %d", app.address().port);
 
