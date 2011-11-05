@@ -177,7 +177,7 @@ html {
   -ms-interpolation-mode: bicubic;
 }
 .deck-container, .deck-container select, .deck-container input, .deck-container textarea {
-  color: #444;
+  color: #111;
 }
 .deck-container a {
   color: #607890;
@@ -219,13 +219,14 @@ html {
   font-size: 2.25em;
   font-weight: bold;
   padding-top: .5em;
-  margin: 0 0 .66666em 0;
+  margin: 0 0 .66666em 8em;
   border-bottom: 3px solid #888;
 }
 .slide h3 {
   font-size: 1.4375em;
   font-weight: bold;
   margin-bottom: .30435em;
+  margin-left: 14em;
 }
 .slide h4 {
   font-size: 1.25em;
@@ -252,6 +253,11 @@ html {
 .slide p, .slide blockquote, .slide iframe, .slide img, .slide ul, .slide ol, .slide pre, .slide video {
   margin-bottom: 1em;
 }
+
+.slide p {
+  margin-left: 22em;
+}
+
 .slide pre {
   white-space: pre;
   white-space: pre-wrap;
@@ -513,6 +519,12 @@ body.deck-container .deck-status {
   font-size: 200%;
 }
 
-.fondo1 {
-  background: url("/images/fondo1.jpg") no-repeat scroll 100% 100% transparent;
+.deck-container > .slide {
+  background: url("/images/fondo2.jpg") no-repeat scroll 100% 100% transparent;
 }
+
+.deck-container iframe {
+  border: 5px solid #333;
+}
+
+
