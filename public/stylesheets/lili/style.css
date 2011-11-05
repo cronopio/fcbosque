@@ -512,3 +512,7 @@ body.deck-container .deck-status {
   width: 280px;
   font-size: 200%;
 }
+
+.fondo1 {
+  background: url("/images/fondo1.jpg") no-repeat scroll 100% 100% transparent;
+}
