@@ -1,10 +1,14 @@
 {
-    "name": "nodeSlides"
-  , "version": "0.0.1"
-  , "private": true
-  , "dependencies": {
-      "express": "2.3.11"
-    , "jade": ">= 0.0.1"
-    , "socket.io": "0.8.6"
+  "name": "nodeSlides",
+  "version": "0.0.5",
+  "private": true,
+  "dependencies": {
+    "express": "2.3.11",
+    "jade": ">= 0.0.1",
+    "socket.io": "0.8.6"
+  },
+  "subdomain": "fcbosque",
+  "scripts": {
+    "start": "app.js"
   }
 }
