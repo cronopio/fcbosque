@@ -1,8 +1,22 @@
-Slides para la charla sobre NodeJS y JavaScript.
+# Plataforma Presentaciones Fundación Casa del Bosque
+La plataforma para las presentaciones es un proyecto del laboratorio tecnológico de la [Fundacion Casa del Bosque](http://www.fcbosque.org/).
 
-La charla será el dia Jueves, 3 de noviembre de 2011.
+Este proyecto busca ofrecer una plataforma que permita la creación de presentaciones, sin preocuparse por los colores, el estilo o la visualización,
+únicamente enfocandose en el cotenido de cada **slide** o diapositiva, además de esto el laboratorio tecnológico busca estar a la altura en las nuevas
+tendencias de construcción de aplicaciones web y esta plataforma es una prueba de ello.
 
-## Charlas
+La plataforma está construida sobre:
+
+ * [Node.js](http://www.nodejs.org/)
+ * [Express](http://expressjs.com/)
+ * [Socket.io](http://socket.io/)
+ * [deck.js](http://imakewebthings.github.com/deck.js/)
+
+Especial agradecimiento para [Nodejitsu](http://nodejitsu.com/) por permitirnos alojar la aplicación en su infraestructura.
+
+![Nodejitsu Rulezzz](http://github.com/cronopio/nodeSlides/raw/bogotajs/public/images/nodejitsu-logo.png)
+
+## Charlas creadas hasta el momento
 
 * JavaScript del lado del servidor usando Node.JS
 * La web como plataforma de desarrollo
