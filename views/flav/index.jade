@@ -16,22 +16,89 @@ section.slide
   h1 Frameworks para desarrollo Web en Node.JS?
 
 section.slide
+  h2 Para empezar necesitamos el core de desarrollo
+  hr
+  ul.deck-child-current
+    li.slide git
+    li.slide Node.JS
+    li.slide NPM (Ya está integrado en node.js v0.6)
+
+section.slide
   h2 Existen varios sabores para diferentes gustos...
   hr
   ul 
-    li Archetype
-    li Blueprint
-    li Coffeemate
-    li Derby
-    li Locomotive
-    li Geddy
-    li flatiron
-    li express
+    li.slide Archetype
+    li.slide Blueprint
+    li.slide Coffeemate
+    li.slide Derby
+    li.slide Locomotive
+    li.slide Geddy
+    li.slide flatiron
+    li.slide(style="font-size: 1.3em; font-weight: bold;") express
 
 section.slide
-  h2 Que necesito...
+  h2 Creemos nuestro primer servidor 
   hr
-  ul
-    li git
-    li Node.JS
-    li NPM
+  pre.slide
+    code $npm install express
+  br
+  .slide
+    script(src="https://gist.github.com/1902330.js")
+
+section.slide
+  h2 Bootstraping nuestra primera aplicación
+  hr
+  pre
+    code $sh _
+
+section.slide
+  h1 Demos un vistazo a la arquitectura de la app
+
+section.slide
+  #express-title
+    h2 express
+  #express-arch
+    ul
+      li.slide Configuración
+      li.slide Ruteo
+      li.slide Midleware
+
+section.slide
+  #config
+    h2 Configuración
+    ul
+      li.slide env
+        ul
+          li development
+          li production
+      li.slide bodyParser()
+      li.slide static()
+      li.slide views()
+      li.slide errorHandler()
+      li.slide
+        p ...
+        | ...
+      li.slide app.route
+
+section.slide
+  #routes
+    h2 Rutas
+    ul
+      li.slide Verbos HTTP
+      li.slide Recursos
+        ul
+          li funcionales
+          li no funcionales
+      li.slide Métodos
+        ul
+          li get
+          li post
+          li put
+          li del
+      li.slide callback
+        pre
+          code= "function(req, res)({  });"
+
+section.slide
+  #req-res
+    h2 (req, res)
