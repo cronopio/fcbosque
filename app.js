@@ -85,7 +85,11 @@ app.get('/express-framework', function(req, res) {
 });
 
 app.listen(process.env.PORT || 3000);
-console.log("Presentacion corriendo en el puerto %d", app.address().port);
+
+app.on('listening', function () {
+  console.log("Presentacion corriendo en el puerto %d", app.address().port);
+});
+
 
 /**
  * Funciones para ayudar al socket.io
