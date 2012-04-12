@@ -69,7 +69,7 @@ app.get('/', function(req, res){
 });
 
 app.get('/nodejs', function(req, res) {
-  res.render('cronopio/index', { layout:'cronopio/layout' });
+  res.render('cronopio/nodejs/index', { layout:'cronopio/nodejs/layout' });
 });
 
 app.get('/web-dev', function(req, res) {
