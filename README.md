@@ -26,6 +26,66 @@ Especial agradecimiento para [Nodejitsu](http://nodejitsu.com/) por permitirnos 
 * Arte Digital para la No Violencia contra la Mujer
 * Express uno de los frameworks para desarrollo Web en NodeJS
 
+## Como Agregar una charla?
+Primero que todo necesita tener un ambiente con [Node.js](http://www.nodejs.org/) instalado y funcionando correctamente con [NPM](http://npmjs.org/)
+
+```
+  git clone https://github.com/cronopio/nodeSlides.git # Clonamos el repositorio
+  cd nodeSlides/
+  npm install # Para instalar las dependencias
+  node app.js # Asi corremos la aplicacion.
+```
+
+Despues de que corra la aplicacion y veamos un mensaje como:
+
+`Presentacion corriendo en el puerto 3000`
+
+Quiere decir que podemos ingresar desde un navegador web a la direccion `http://localhost:3000` alli podremos ver la pagina de inicio
+que contiene el listado de las diferentes conferencias subidas.
+
+Lo primero es crear la plantilla inicial, debemos crear un directorio dentro de `views/` con nuestro nombre. Luego crearemos un directorio para nuestra presentacion, 
+quedando algo como `views/cronopio/miPresentacion` en ese directorio es donde crearemos nuestra presentacion.
+
+Cada presentacion esta compuesta por 2 archivos principales
+
+ * `layout.jade`  Plantilla Base
+ * `index.jade`   Slides
+
+En este caso estamos usando [Jade]() como motor de templates para generar HTML, es muy recomendable aprenderlo a usar y es rapido de aprender. 
+Si usted no se siente comodo usando Jade, entonces puede hacer la presentacion en HTML crudo, siguiendo las recomendaciones de [deck.js](http://imakewebthings.github.com/deck.js/)
+
+Es recomendable familiarizarse con el funcionamiento de [deck.js](http://imakewebthings.github.com/deck.js/) para entender mejor lo que hay en `layout,jade`
+Basicamente tendremos los siguientes elementos:
+
+ * `title` Para definir el titulo de la pagina
+ * `link` Para incluir los CSS del tema elegido de deck.js
+ * Set de controles para el maestro
+ * Uso de algunos plugins de deck.js (navigation, status, remote, etc)
+ * Y terminamos incluyendo el JS necesario
+
+Es muy recomendable que revise el archivo [layout.jade](https://github.com/cronopio/nodeSlides/blob/master/views/cronopio/layout.jade) como una guia para hacer el suyo.
+
+En el archivo `index.jade` tendremos entonces cada uno de los DIVs con clase `slide` para que funcione deck.js
+
+Por ultimo y para terminar simplemente edite el archivo `app.js` busque la parte donde se definen las rutas usando `app.get()` alli agregue su propia ruta:
+
+```javascript
+app.get('/miPresentacion', function(req, res) {
+  res.render('cronopio/miPresentacion/index', { layout: 'cronopio/miPresentacion/layout' });
+});
+```
+
+Recuerde cambiar los datos de nombre de usuario y nombre de la presentacion a los suyos.
+
+Para verificar entre el navegador y valla a la direccion `http://localhost:3000/miPresentacion` para visualizar sus slides.
+
+#### Como agregar mi presentacion al listado inicial?
+TDD
+
+#### Como modificar app.js cuando hice mi presentacion en HTML crudo.
+TDD
+
+
 ## Agradecimientos.
 Thanks to [Caleb Troughton] (https://github.com/imakewebthings) for bulding [deck.js](http://imakewebthings.github.com/deck.js/), a modern presentation tool.
  
