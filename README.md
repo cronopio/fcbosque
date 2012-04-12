@@ -14,7 +14,7 @@ La plataforma está construida sobre:
 
 Especial agradecimiento para [Nodejitsu](http://nodejitsu.com/) por permitirnos alojar la aplicación en su infraestructura.
 
-![Nodejitsu Rulezzz](http://github.com/cronopio/nodeSlides/raw/bogotajs/public/images/nodejitsu-logo.png)
+![Nodejitsu Rulezzz](http://github.com/cronopio/nodeSlides/raw/master/public/images/nodejitsu-logo.png)
 
 ## Charlas creadas hasta el momento
 
