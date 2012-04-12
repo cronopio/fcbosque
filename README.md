@@ -54,7 +54,8 @@ Cada presentacion esta compuesta por 2 archivos principales
 En este caso estamos usando [Jade](https://github.com/visionmedia/jade) como motor de templates para generar HTML, es muy recomendable aprenderlo a usar y es rapido de aprender. 
 Si usted no se siente comodo usando Jade, entonces puede hacer la presentacion en HTML crudo, siguiendo las recomendaciones de [deck.js](http://imakewebthings.github.com/deck.js/)
 
-Es recomendable familiarizarse con el funcionamiento de [deck.js](http://imakewebthings.github.com/deck.js/) para entender mejor lo que hay en `layout,jade`
+Es recomendable familiarizarse con el funcionamiento de [deck.js](http://imakewebthings.github.com/deck.js/) para entender mejor lo que hay en `layout.jade`
+
 Basicamente tendremos los siguientes elementos:
 
  * `title` Para definir el titulo de la pagina
