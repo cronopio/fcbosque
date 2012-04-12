@@ -1,6 +1,9 @@
 # Plataforma Presentaciones Fundación Casa del Bosque
 La plataforma para las presentaciones es un proyecto del laboratorio tecnológico de la [Fundacion Casa del Bosque](http://www.fcbosque.org/).
 
+### Dominio Temporal
+http://fcbosque.jit.su
+
 Este proyecto busca ofrecer una plataforma que permita la creación de presentaciones, sin preocuparse por los colores, el estilo o la visualización,
 únicamente enfocandose en el cotenido de cada **slide** o diapositiva, además de esto el laboratorio tecnológico busca estar a la altura en las nuevas
 tendencias de construcción de aplicaciones web _escalables_ y esta plataforma es una prueba de ello.
