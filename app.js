@@ -80,6 +80,10 @@ app.get('/artedigital', function(req, res) {
   res.render('lili/index', { layout: 'lili/layout' });
 });
 
+app.get('/express-framework', function(req, res) {
+  res.render('flav/index', { layout: 'flav/layout' });
+});
+
 app.listen(process.env.PORT || 3000);
 console.log("Presentacion corriendo en el puerto %d", app.address().port);
 

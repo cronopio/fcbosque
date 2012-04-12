@@ -1,0 +1,136 @@
+section.slide
+  a(href="http://fcbosque.org")
+    img(src="/images/header-logotype.jpg", style="margin-top:20px; float:right;")
+  h2 Express uno de los frameworks para desarrollo web en NodeJS
+  hr
+  h3 Fabian Hernández Nieto
+  h5 Laboratorio Tecnológico Fundación Casa del Bosque
+  img(src="/images/express-main-img.jpg", style="margin-top: 30px;")
+  .sources
+    h5
+      a(href="mailto:fhernandezn@gmail.com") fhernandezn@gmail.com
+      br
+      a(href="http://twitter.com/the_flavian") @the_flavian
+
+section.slide
+  h1 Frameworks para desarrollo Web en Node.JS?
+
+section.slide
+  h2 Existen varios sabores para diferentes gustos...
+  hr
+  ul 
+    li.slide Archetype
+    li.slide Blueprint
+    li.slide Coffeemate
+    li.slide Derby
+    li.slide Locomotive
+    li.slide Geddy
+    li.slide flatiron
+    li.slide(style="font-size: 1.3em; font-weight: bold;") express
+
+section.slide
+  h2 Características
+  hr 
+  ul
+    li.slide Enrutamiento robusto
+    li.slide Helpers para redirección
+    li.slide Helpers para vistas dinámico
+    li.slide Negociación de contenido
+    li.slide Alto Rendimiento
+    li.slide Apoyo para vistas parciales
+    li.slide Configuración basada en el env
+    li.slide Notificaciones de sessión 
+    li.slide
+      b Construido en Connect
+    li.slide Ejecutable para la generación de aplicaciónes básicas
+    li.slide Alta cobertura para pruebas
+
+section.slide
+  h2 Para empezar necesitamos el core de desarrollo
+  hr
+  ul.deck-child-current
+    li.slide git
+    li.slide Node.JS
+    li.slide NPM (Ya está integrado en node.js v0.6)
+
+section.slide
+  h2 Creemos nuestro primer servidor 
+  hr
+  pre.slide
+    code $npm install express
+  br
+  .slide
+    script(src="https://gist.github.com/1902330.js?file=app.js")
+
+section.slide
+  h2 Bootstraping nuestra primera aplicación
+  hr
+  pre
+    code $sh _
+
+section.slide
+  h1 Demos un vistazo a la arquitectura de la app
+
+section.slide
+  #express-title
+    h2 Express
+  #express-arch
+    ul
+      li.slide Configuración
+      li.slide Rutas
+      li.slide Midleware
+
+section.slide
+  #config
+    h2 Configuración
+    ul
+      li.slide env
+        ul
+          li development
+          script(src="https://gist.github.com/1902330.js?file=env-development.js")
+          li production
+          script(src="https://gist.github.com/1902330.js?file=env-production.js")
+
+section.slide
+  #config
+    h2 Configuración
+    ul
+      li.slide bodyParser()
+      li.slide static()
+      li.slide views()
+      li.slide errorHandler()
+      li.slide
+        p ...
+        | ...
+      li.slide app.route
+
+section.slide
+  #routes
+    h2 Rutas
+    ul
+      li.slide Verbos HTTP
+      li.slide Métodos
+        ul
+          li get
+          li post
+          li put
+          li del
+      li.slide Recursos
+        ul
+          li funcionales
+          li no funcionales
+      li.slide callback
+        pre
+          code= "function(req, res)({  });"
+
+section.slide
+  script(src="https://gist.github.com/1902330.js?file=index.js")
+
+section.slide
+  #middleware
+    h2 Middleware
+    hr
+    ul
+      li.slide Vía Connect
+      li.slide Manejo en las rutas
+        script(src="https://gist.github.com/1902330.js?file=middleware.js")

@@ -1,6 +1,9 @@
 # Plataforma Presentaciones Fundación Casa del Bosque
 La plataforma para las presentaciones es un proyecto del laboratorio tecnológico de la [Fundacion Casa del Bosque](http://www.fcbosque.org/).
 
+### Dominio Temporal
+http://fcbosque.jit.su
+
 Este proyecto busca ofrecer una plataforma que permita la creación de presentaciones, sin preocuparse por los colores, el estilo o la visualización,
 únicamente enfocandose en el cotenido de cada **slide** o diapositiva, además de esto el laboratorio tecnológico busca estar a la altura en las nuevas
 tendencias de construcción de aplicaciones web _escalables_ y esta plataforma es una prueba de ello.
@@ -14,13 +17,14 @@ La plataforma está construida sobre:
 
 Especial agradecimiento para [Nodejitsu](http://nodejitsu.com/) por permitirnos alojar la aplicación en su infraestructura.
 
-![Nodejitsu Rulezzz](http://github.com/cronopio/nodeSlides/raw/bogotajs/public/images/nodejitsu-logo.png)
+![Nodejitsu Rulezzz](http://github.com/cronopio/nodeSlides/raw/master/public/images/nodejitsu-logo.png)
 
 ## Charlas creadas hasta el momento
 
 * JavaScript del lado del servidor usando Node.JS
 * La web como plataforma de desarrollo
 * Arte Digital para la No Violencia contra la Mujer
+* Express uno de los frameworks para desarrollo Web en NodeJS
 
 ## Agradecimientos.
 Thanks to [Caleb Troughton] (https://github.com/imakewebthings) for bulding [deck.js](http://imakewebthings.github.com/deck.js/), a modern presentation tool.
