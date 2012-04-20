@@ -17,55 +17,27 @@ section.slide
       br
       a(href="http://github.com/cronopio")
         img(src="/images/github.png", style="margin:10px")
-  
-//
-  section.slide
-    h1 Introducción.
-    
-  section.slide
-    h1 Arquitectura Cliente-Servidor
-    
-  section.slide
-    h2 Arquitectura Cliente-Servidor
-    hr
-    img(src="/images/Cliente-Servidor.png")
-    
-  section.slide
-    h2 Conceptos Claves.
-    hr
-    ol
-      li
-        h3 TCP / IP
-        p Conjunto de estándares báse de enrutamiento en Internet
-      li
-        h3 DNS
-        p Sistema para la resolución de nombres de dominio.
-      li
-        h3 HTTP
-        p Protocolo para el intercambio de información hipertextual.
-      li
-        h3 URL
-        p Localizador Uniforme de Recursos.
-        small
-          em http://www.fcbosque.org/index/index.php
-        
 section.slide
   h1 ¿Node.js?
-  
 section.slide
   h2 ¿Qué es Node.JS?
   hr
-  p Entorno de desarrollo orientado a eventos de entrada/salida (I/O) basado en 
-    a(href="http://code.google.com/p/v8/") V8 
-    | para la construcción de programas de red facilmente escalables.
+  p Entorno de programación orientado a eventos
+    sup
+      a(href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_dirigida_por_eventos") [1]
+    | , pensado para construir programas de red rapidos y escalables, 
+    | con modelos de entrada/salida sin bloqueo
+    sup
+      a(href="http://en.wikipedia.org/wiki/Asynchronous_I/O") [2]
+    | que hacen liviano y eficiente el entorno. Perfecto para
+    | aplicaciones en tiempo real y de datos intensivos.
   ul
     li
       h3 JavaScript en Server - Side
     li
       h3 Construido sobre 
         a(href="http://code.google.com/p/v8/") V8 
-        | de 
-        a(href="http://www.google.com.co") Google
+        | (el motor de JS de Chrome)
     li
       h3 Orientado a eventos
     li
@@ -76,15 +48,48 @@ section.slide
     li
       h3 Sistema de modulos CommonJS
     li
-      h3 8000 lineas de C++, 2000 lineas de JS
+      h3 Core escrito en C++, libreria estandar escrita en JS
     li
-      h3 En 2009, 14 desarrolladores del core. Hoy 226
+      h3 En 2009, 14 desarrolladores del core. Hoy 296
+  .sources Mas Info: 
+    a(href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_dirigida_por_eventos") [1]
+    | ,
+    a(href="http://en.wikipedia.org/wiki/Asynchronous_I/O") [2]
+section.slide
+  h1 ¿Y quien usa Node.js?
+section.slide
+  h2 En la industria.
+  hr
+  h3 Grandes compañias como...
+  img(src="/images/ebayLogo.jpg")
+  a(href="http://www.ebaytechblog.com/2011/11/30/announcing-ql-io/") Announcing ql.io
+  img(src="/images/linkedin.jpg")
+  a(href="http://venturebeat.com/2011/08/16/linkedin-node/") How LinkedIn used Node.js and HTML5 to build a better, faster app
+  img(src="/images/uberlogo.jpg")
+  a(href="https://www.uber.com/") https://www.uber.com/
+  img(src="/images/facebook-logo.jpg")
+section.slide
+  h2 En la industria.
+  hr
+  h3 Compañias un poco menos conocidas...
+  img(src="/images/joyentlogo.jpg")
+  img(src="/images/nodejitsu-logo.png")
+  img(src="/images/c9-logo.jpg")
 section.slide
   h1 ESPERA!!
     br
-    | ¿JS en Server?
+    small ¿JS en Server-side?
     br
-    | WTF?!
+    .slide WTF?!
+section.slide
+  h1 Si!, Gracias a 
+    a(href="http://code.google.com/p/v8/") V8
+    br
+    sub
+      small
+        small
+          small y a google ;)
+
 section.slide
   h1 Orientado a Eventos.
 section.slide
