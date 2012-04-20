@@ -25,7 +25,7 @@ section.slide
   p Entorno de programación orientado a eventos
     sup
       a(href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_dirigida_por_eventos") [1]
-    | , pensado para construir programas de red rapidos y escalables, 
+    | , pensado para construir programas de red rápidos y escalables, 
     | con modelos de entrada/salida sin bloqueo
     sup
       a(href="http://en.wikipedia.org/wiki/Asynchronous_I/O") [2]
@@ -56,7 +56,7 @@ section.slide
     | ,
     a(href="http://en.wikipedia.org/wiki/Asynchronous_I/O") [2]
 section.slide
-  h1 ¿Y quien usa Node.js?
+  h1 ¿Y quién usa Node.js?
 section.slide
   h2 En la industria.
   hr
@@ -95,18 +95,56 @@ section.slide
 section.slide
   h2 Bloqueo de I/O
   hr
-  h3 Muchas aplicaciones web tienen codigo como este:
+  h3 Muchas aplicaciones web tienen código como este:
   blockquote
     span(style="color:#66CCFF") var 
-    | r = db.query(
+    span(style="color:#002EB8") $r 
+    |  = db.query(
     span(style="color:#990000") 'select * from T'
     | );
     br
     code(style="color:#009900")
-      // uso el $r
+      | // puedo usar el 
+      span(style="color:#002EB8") $r
+    br
+    | echo 
+    span(style="color:#002EB8") $r 
+  h3 
+    a(href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_estructurada") Programación Estructurada.
   h3 ¿Y qué hace el software mientras se hacen las consultas a la base de datos?
 section.slide
-  h1 En la mayoría de casos, solo esperar la respuesta.
+  h1 En la mayoría de casos...
+    .slide sólo esperar la respuesta.
+section.slide
+  h2 Non-blocking de I/O
+  hr
+  h3 En el mundo de javascript el código luciría algo como:
+  blockquote
+    | db.query(
+    small(style="color:#990000") 'select * from T'
+    | , 
+    span(style="color:#002EB8") function 
+    | (r) {
+    br
+    code(style="color:#009900")
+      | // puedo usar el 
+      span(style="color:#002EB8") r
+    br
+    span(style="margin-left:1em") alert(
+    span(style="color:#002EB8") r
+    | );
+    br
+    | });
+    br
+    code(style="color:#009900")
+      | // el flujo del programa sigue
+    br
+    | alert(
+    small(style="color:#990000") 'Hola Mundo'
+    | );
+  h3
+    a(href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_dirigida_por_eventos") Programación controlada por eventos (event-driven).
+   
 section.slide
   h1 El buen software puede ser 
     br
@@ -118,7 +156,7 @@ section.slide
 section.slide
   h1 ¿Es lo mejor que podemos hacer?
 section.slide
-  h1 Demosle una mirada a 
+  h1 Démosle una mirada a 
     a(href="http://www.apache.org/") Apache 
     | y 
     a(href="http://nginx.org/") Nginx
@@ -186,21 +224,21 @@ section.slide
     | db.query(
     span(style="color:#990000") "select ..."
     | , 
-    span(style="color:#66CCFF") function
+    span(style="color:#002EB8") function
     | (r) {
     br
     code(style="color:#009900;margin-left:30px")
-      // uso el r
+      | // uso el r
     br
     | });
   h3 Permite al programa regresar al bucle de eventos inmediatamente.
-  h3 ... y no necesita nada mas.
+  h3.slide ... y no necesita nada más.
 section.slide
   h1 Asi es como debe hacerse la entrada/salida (I/O)
 section.slide
-  h1 ...mmm ¿bucle de eventos?, me suena a
+  h1 ...mmm ¿bucle de eventos?, me suena a...
     br
-    | JavaScript!
+    .slide JavaScript!
 section.slide
   h2 JavaScript
   hr
@@ -216,7 +254,7 @@ section.slide
     .slide
       blockquote
         | “Un lenguaje que no tenga todo, 
-        | es realmente facil programarlo para que lo haga.”
+        | es realmente fácil programarlo para que lo haga todo.”
         br
         em(style="margin-left: 3em")    – Dennis Ritchie
 section.slide
@@ -237,7 +275,7 @@ section.slide
     li
       strong python  
       small
-        em (recomendado 2.6)
+        em (recomendado 2.6, solo necesario cuando se compila)
     li
       strong libssl-dev 
       small
@@ -245,19 +283,59 @@ section.slide
 section.slide
   h2 Instalación
   hr
+  h3 Debian:
+  pre
+    code
+      | root@host: ~ # echo deb http://ftp.us.debian.org/debian/ sid main > /etc/apt/sources.list.d/sid.list
+      | root@host: ~ # apt-get update
+      | root@host: ~ # apt-get install nodejs npm
+    .slide
+      code
+        | ### Opcional (y obligatorio para algunos modulos)
+    .slide
+      code
+        | root@host: ~ # apt-get install build-essential # Herramientas de compilación
+        | root@host: ~ # apt-get install nodejs-dev # Codigo de nodejs
+  h3 Ubuntu:
+  pre
+    code
+      | sudo apt-get install python-software-properties
+      | sudo add-apt-repository ppa:chris-lea/node.js
+      | sudo apt-get update
+      | sudo apt-get install nodejs npm
+    .slide
+      code
+        | ### De nuevo, opcional (y obligatorio para algunos modulos)
+    .slide
+      code
+        | sudo apt-get install build-essential # Herramientas de compilación
+        | sudo apt-get install nodejs-dev # Codigo de nodejs
+section.slide
+  h2 Instalación
+  hr
+  h3 Para mas distribuciones y/o sistemas operativos 
+    a(href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager") revise la wiki de node.
+  h3.slide ¿Windows?
+  h3.slide Para Windows cada vez son mas grandes los esfuerzos para que funcione bien, pero 
+    code node.js
+    |  tiene algunos principios bastante ligados con los Unix modernos. 
+    
+section.slide
+  h2 Instalación
+  hr
   h3 Descargando las fuentes:
   h4 Usando Git.
   pre
     code
-       git clone git://github.com/joyent/node.git
-       cd node/
-       git checkout v0.4.12
+       | git clone git://github.com/joyent/node.git
+       | cd node/
+       | git checkout v0.6.15
   h4 Descargando un tarball.
   pre
     code
-      wget -c https://github.com/joyent/node/tarball/v0.4.12 -O node-0.4.12.tar.gz
-      tar zxvf node-0.4.12.tar.gz
-      cd joyent-node-41e5762
+      | wget -c https://github.com/joyent/node/tarball/v0.6.15 -O node-0.6.15.tar.gz
+      | tar zxvf node-0.6.15.tar.gz
+      | cd joyent-node-d90d46f/
   .sources
     a(href="https://github.com/joyent/node/wiki/Installation") Guía de Instalación Oficial 
     | -  
@@ -269,33 +347,38 @@ section.slide
   h4 Como usuario sin privilegios.
   pre
     code
-      mkdir ~/local
-      ./configure --prefix=~/local
-      make -j2 # dependiendo del numero de cores.
-      make install
-      echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc
-      source ~/.bashrc
+      | mkdir ~/local
+      | ./configure --prefix=~/local
+      | make -j2 # dependiendo del numero de cores.
+      | make install
+      | echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc
+      | source ~/.bashrc
   h4 Como root.
   pre
     code
-      su -
-      ./configure
-      make -j2 # dependiendo del numero de cores.
-      make install
+      | su -
+      | ./configure
+      | make -j2 # dependiendo del numero de cores.
+      | make install
 section.slide
   h2 Instalación
   hr
   h3 Node Package Manager (NPM)
   pre
     code
-      curl http://npmjs.org/install.sh | sh
-  h3 Instalando modulos o paquetes.
+      | curl http://npmjs.org/install.sh | sh
+  h3 Instalando módulos o paquetes.
+  h4 de manera local
   pre
     code
-      npm install express
+      | npm install express
+  h4 de manera global
+  pre
+    code npm install 
+      strong -g 
+      | express
   .sources
     a(href="http://www.npmjs.org/") Página NPM
-    
 section.slide
   h1 Ok, ¿y ahora?
 section.slide
@@ -303,10 +386,10 @@ section.slide
   hr
   h3 Busqueda en 
     a(href="http://search.npmjs.org/") search.npmjs.org
-  h3 O usando CLI  (5032 paquetes registrados.)
+  h3 O usando CLI  (9101 paquetes registrados.)
   pre
     code
-      npm search hook.io   # tema o tag a buscar
+      | npm search hook.io   # tema o tag a buscar
   hr
   h4 Paquetes más usados.
   img(src="/images/pkg-mas-usados.png")
@@ -317,7 +400,7 @@ section.slide
     a(href="http://toolbox.no.de/") node-toolbox
   p El 
     strong  node-toolbox 
-    |  es un sitio donde podemos encontrar los paquetes registrados en NPM ordenados por categorias. Tambien tiene links a sitios de interes y listados por popularidad de paquetes. La aplicación esta desplegada en las
+    |  es un sitio donde podemos encontrar los paquetes registrados en NPM ordenados por categorías. También tiene links a sitios de interés y listados por popularidad de paquetes. La aplicación está desplegada en las
     em Smart Machines 
     | de  
     a(href="http://no.de/")  Joyent 
@@ -325,7 +408,10 @@ section.slide
     a(href="http://toolbox.no.de/") toolbox.no.de
   h3 
     a(href="https://github.com/joyent/node/wiki/modules") Wiki de Node
-  p El wiki de node tiene un listado de modulos compatibles con nodejs.
+  p El wiki de node tiene un listado de módulos compatibles con node.js.
+  h3
+    a(href="http://nodejsmodules.org/") node.js module rankings
+  p Listado de modulos de node.js ordenados por su ranking. 
 section.slide
   h1 ¿Más Preguntas?
 section.slide
