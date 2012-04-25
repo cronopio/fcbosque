@@ -161,19 +161,11 @@ section.slide
     | y 
     a(href="http://nginx.org/") Nginx
 
-//
-  section.slide
-    h2 Apache vs Nginx
-    h3 Concurrencia vs Peticiones/s
-    img(src="http://www.webfaction.com/blog/nginx-apache-reqs-sec.png")
-    .sources Fuentes: 
-      a(href="http://blog.webfaction.com/a-little-holiday-present")[1]
-
 section.slide
   h2 Apache vs Nginx
   hr
   h3 Memoria RAM vs Conexiones Concurrentes
-  img(src="http://www.webfaction.com/blog/nginx-apache-memory.png")
+  img(src="/images/nginx-apache-memory.png")
   .sources Fuentes: 
     a(href="http://blog.webfaction.com/a-little-holiday-present")[1]
 section.slide
@@ -424,15 +416,15 @@ section.slide
 section.slide
   h2 Hola Mundo.
   hr
-  script(src="https://gist.github.com/1325350.js?file=sys.js")
+  script(src="/javascripts/gists/sys.js")
 section.slide
   h2 Callback
-  script(src="https://gist.github.com/1325350.js?file=exit.js")
+  script(src="/javascripts/gists/exit.js")
 section.slide
   h2 Socket TCP
   hr
   h3 Servidor
-  script(src="https://gist.github.com/1325350.js?file=tcp.js")
+  script(src="/javascripts/gists/tcp.js")
   h3 Cliente
   pre
     code telnet localhost 8000
@@ -440,24 +432,24 @@ section.slide
   h2 Consulta de dominios.
   hr
   h3 Servidor
-  script(src="https://gist.github.com/1325350.js?file=dns.js")
+  script(src="/javascripts/gists/dns.js")
   h3 Cliente
   pre
     code
-     telnet localhost 8000
-     ip fcbosque.org
-     salir
+     | telnet localhost 8000
+     | ip fcbosque.org
+     | salir
 section.slide
   h2 Servidor Web
   hr
   h3 Servidor
-  script(src="https://gist.github.com/1325350.js?file=http.js")
+  script(src="/javascripts/gists/http.js")
   h3 Cliente
   pre
     code http://localhost:4000/
 section.slide
   a(href="https://github.com/cronopio/nodeSlides")
-    img(style="position: absolute; top: 0; right: 0; border: 0;", src="https://a248.e.akamai.net/assets.github.com/img/abad93f42020b733148435e2cd92ce15c542d320/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67", alt="Fork me on GitHub")
+    img(style="position: absolute; top: 0; right: 0; border: 0;", src="/images/github-green.png", alt="Fork me on GitHub")
   h1 Gracias!!
   .sources
     h3 Daniel Aristizabal Romero
