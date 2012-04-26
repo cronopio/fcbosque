@@ -64,9 +64,9 @@ Basicamente tendremos los siguientes elementos:
  * Uso de algunos plugins de deck.js (navigation, status, remote, etc)
  * Y terminamos incluyendo el JS necesario
 
-Es muy recomendable que revise el archivo [layout.jade](https://github.com/cronopio/nodeSlides/blob/master/views/cronopio/layout.jade) como una guia para hacer el suyo.
+Es muy recomendable que revise el archivo [layout.jade](https://github.com/cronopio/nodeSlides/blob/master/views/cronopio/nodejs/layout.jade) como una guia para hacer el suyo.
 
-En el archivo `index.jade` tendremos entonces cada uno de los DIVs con clase `slide` para que funcione deck.js
+En el archivo `index.jade` tendremos entonces cada uno de los *<section>* con clase `slide` para que funcione deck.js
 
 Por ultimo y para terminar simplemente edite el archivo `app.js` busque la parte donde se definen las rutas usando `app.get()` alli agregue su propia ruta:
 
