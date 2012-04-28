@@ -107,5 +107,40 @@ section.slide
     li.slide La version publicada el 27 de marzo de 2012 fue la 2.0.19
       a(href="http://lists.gnupg.org/pipermail/gnupg-announce/2012q1/000314.html") [1]
 section.slide
-  h1 Criptografía asimétrica
+  h1 Criptografía
 section.slide
+  h2 Criptografía Clasica
+  hr
+  p Para cifrar mensajes usando este tipo de cifrado, simplemente generamos una llave para cifrar el mensaje.
+  p El mensaje queda cifrado usando esta llave, para descifrarlo es necesario tener la llave.
+  p El proceso mas tedioso aca es hacer llegar la llave al destinatario del mensaje lo mas seguro posible.
+  p De manera que si en el proceso alguien mas obtiene la llave, pues el cifrado no sirvio para nada.
+  img(src="/images/Criptografiasimetrica.png")
+section.slide
+  h2 Criptografía asimétrica
+  hr
+  p Son creadas 2 llaves.
+  h3 Llave Pública
+  ul
+    li Esta llave se puede compartir con uno o muchas personas
+    li No hay problema si alguien que no deseamos adquiere la llave pública
+    li Puedo publicar esta llave en varios servidores
+    li Con esta llave las demas personas podran escribirme de manera cifrada.
+  h3 Llave Privada
+  ul
+    li Esta llave es totalmente 
+      strong SECRETA.
+    li Cuando alguien más, aparte de nosotros acceda a esta llave, hay que bannearlas inmediatamente.
+    li No puedo publicarla en ningun lado y debo mantenerla en un lugar seguro.
+    li Con esta llave podre descifrar los mensajes que me escriban usando la llave pública.
+section.slide
+  h1 ¿Como funciona?
+section.slide
+  img(src="/images/CriptografiaAsimetrica1.png")
+section.slide
+  img(src="/images/CriptografiaAsimetrica2.png")
+section.slide
+  img(src="/images/CriptografiaAsimetrica3.png")
+section.slide
+  h1 Manos a la obra!
+  
