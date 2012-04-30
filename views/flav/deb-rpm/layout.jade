@@ -24,12 +24,12 @@ html
     .deck-remote-master-message
       p La clave es:
       p.deck-remote-master-feedback
-        form.deck-remote-master-form(action="")
-          p
-            input.deck-remote-password(type="password")
-          br
-          p.deck-remote-links
-            input(type="submit", value="Iniciar Sesión")
+      form.deck-remote-master-form(action="")
+        p
+          input.deck-remote-password(type="password")
+        br
+        p.deck-remote-links
+          input(type="submit", value="Iniciar Sesión")
 
     != body
     a.deck-prev-link(title="Anterior", href="#") &#8592;
@@ -47,5 +47,5 @@ html
   script
     $(function() {
       $.deck(".slide");
-      $.deck(".remote");
+      $.deck("remote");
     });

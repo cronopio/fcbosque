@@ -1,0 +1,96 @@
+section.slide
+  a(href="http://fcbosque.org")
+    img(src="/images/header-logotype.jpg", style="margin-top:40px;")
+  h2 Paquetes deb y rpm, gestión e interfaces apt, aptitude y synaptic
+  hr
+  h3 Fabián Hernández Nieto
+  h5 Laboratorio Tecnológico Fundación Casa del Bosque
+  br
+  .sources
+    h5
+      a(href="mailto:fhernandezn@gmail.com") fhernandezn@gmail.com
+      br
+      a(href="http://twitter.com/snapdrone") @snapdrone
+
+section.slide
+  h2(style="text-align: center; margin-top:40px;") El manejo de paquetes en cualquier distribución GNU/Linux es una tarea importante y recurrente...
+
+section.slide
+  h2 Que es un paquete de software?
+  br
+  img(src="/images/paquete-img.jpg")
+
+section.slide
+  h2 Los formatos varían según la distribución
+  hr
+  ul
+    li.slide(style="font-weight: bold; font-size:1.1em;") deb
+    li.slide(style="font-weight: bold; font-size:1.1em;") rpm
+    li.slide pkg
+    li.slide ebuild
+    li.slide apk
+    li.slide PISI
+    li.slide tgz
+    li.slide LZM
+    li.slide pup y pet
+
+section.slide
+  h2 Aspectos generales
+  hr
+  ul
+    li.slide Seguridad, autenticación, verificación
+    li.slide Usabilidad a través de herramientas standard de unix
+    li.slide Metadados
+    li.slide Archivos especiales
+    li.slide Empaquetado de programas (dependencias)
+    li.slide Escalabilidad
+
+section.slide
+  h2 Herramientas de gestión de paquetes
+  hr
+  ul
+    li.slide Consulta
+    li.slide Instalación
+    li.slide Actualización
+    li.slide Configuración
+    li.slide Desinstalación
+
+section.slide
+  h2 Formas de acceso para la Gestión de paquetes
+  hr
+  ul
+    li.slide Línea de comandos
+    li.slide ncurses
+    li.slide Front-end gráfico
+
+section.slide
+  h1 .deb vs .rpm
+
+section.slide
+  h2 Nombre del archivo
+  hr
+  code
+    pre.slide foo.version.revision.arch
+      em .deb
+  code
+    pre.slide bar.version.revision.arch
+      em .rpm
+
+section.slide
+  h2 Estructura .deb
+  hr
+  img(src="/images/deb-file-struct.jpg", class="slide")
+
+section.slide
+  h2 Estructura .rpm
+  hr
+  img(src="/images/rpm-file-struct.jpg", class="slide")
+
+section.slide
+  h2 Como puedo gestionar entonces estos tipos de paquetes?
+  hr
+  h3.slide(style="text-align:center;") Bajo nivel (Consola)
+  p.slide
+    img(src="/images/down-arrow.png", width="40")
+  h3.slide(style="text-align:center;") Alto nivel (Front end Gráfico)
+
