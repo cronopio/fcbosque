@@ -4,7 +4,7 @@ html
     meta(charset="utf-8")
     title Express uno de los frameworks para desarrollo web en NodeJS
     meta(name="viewport", content="width=1024, user-scalable=yes")
-    link(rel="stylesheet", type="text/css", href="/stylesheets/flav/style.css")
+    link(rel="stylesheet", href="/stylesheets/flav/style.css")
     link(rel="stylesheet", href="/stylesheets/flav/horizontal-slide.css")
     link(rel="stylesheet", href="/stylesheets/flav/web-2.0.css")
     link(rel="icon", type="image/png", href="/images/favicon.png")
@@ -23,12 +23,12 @@ html
     .deck-remote-master-message
       p La clave es:
       p.deck-remote-master-feedback
-        form.deck-remote-master-form(action="")
-          p
-            input.deck-remote-password(type="password")
-          br
-          p.deck-remote-links
-            input(type="submit", value="Iniciar Sesión")
+      form.deck-remote-master-form(action="")
+        p
+          input.deck-remote-password(type="password")
+        br
+        p.deck-remote-links
+          input(type="submit", value="Iniciar Sesión")
     != body
     a.deck-prev-link(title="Anterior", href="#") &#8592;
     a.deck-next-link(title="Siguiente", href="#") &#8594;
@@ -45,5 +45,5 @@ html
   script
     $(function() {
       $.deck(".slide");
-      $.deck('.remote');
+      $.deck('remote');
     });
