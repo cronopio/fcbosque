@@ -1,15 +1,15 @@
 section.slide
   a(href="http://fcbosque.org")
     img(src="/images/header-logotype.jpg", style="margin-top:20px;float:right;")
-  h2 Criptografia para seres humanos. Usando GPG y GNU/Linux
+  h2 Criptografía para seres humanos. Usando GPG y GNU/Linux
   hr
   h3 Daniel Aristizabal Romero [cronopio]
   h5 Laboratorio Tecnológico Fundación Casa del Bosque
   
   br
   
-  p Esta presentacion es una pagina web, puedes usar el mouse o las flechas 
-    | para moverte a travez de los slides. Ingresa a 
+  p Esta presentacion es una página web, puedes usar el mouse o las flechas 
+    | para moverte a través de los slides. Ingresa a 
     a(href="http://fcbosque.jit.su/gpg") fcbosque.jit.su/gpg
   p Esta disponible en la 
     a(href="http://fcbosque.jit.su") Plataforma de presentaciones de la Fundación Casa del Bosque 
@@ -29,7 +29,7 @@ section.slide
         img(src="/images/github.png", style="margin:10px")
 
 section.slide
-  h2 ¿Qué es lo que aprendere?
+  h2 ¿Qué es lo que aprenderé?
   hr
   ul
     li A crear mis llaves GPG.
@@ -51,7 +51,7 @@ section.slide
   img(src="/images/PhilZ.jpg")
   h4.slide Activista Político.
   h4.slide Publico Pretty Good Privacy (PGP) en 1991.
-  h4.slide U.S.A. Lo acuso de exportar armas sin licencia.
+  h4.slide U.S.A. Lo acusó de exportar armas sin licencia.
   h4.slide Una comunidad de Hackers en el mundo ayudaron a Phil sacando PGP-2 y PGP-2i
 
 section.slide
@@ -60,17 +60,20 @@ section.slide
   h4.slide En 1997 publican PGP-5 al igual que proponen a la 
     a(href="http://www.ietf.org/") IETF
     |  la creación de un comité de trabajo para la publicación de un estandar 
-    | del protocolo que usaba PGP internamente y que llamarian OpenPGP.
-  h4.slide Se decia que PGP era Software Libre pero no es asi. El hecho de que el 
-    | codigo fuente este disponible no convierte el software en Software Libre.
+    | del protocolo que usaba PGP internamente y que llamarían OpenPGP.
+  h4.slide Se decía que PGP era Software Libre pero no es así. El hecho de que el 
+    | código fuente este disponible no convierte el software en 
+    a(href="http://www.gnu.org/philosophy/free-sw.es.html") Software Libre.
   h4.slide Adicionalmente 
     u RSA
     |  e 
     u IDEA
     |  los algoritmos principales estaban patentados en U.S.A.
-  h4.slide RMS y el proyecto GNU preguntaron a hackers europeos si podian hacer un reemplazo libre
-    |  a PGP ya que las leyes de USA prohiben a sus ciudadanos escribir algo asi.
-  h4.slide Y asi aparecio.....
+  h4.slide 
+    a(href="http://stallman.org/") RMS
+    |  y el proyecto GNU preguntaron a hackers europeos si podian hacer un reemplazo libre
+    |  a PGP ya que las leyes de USA prohíben a sus ciudadanos escribir algo así.
+  h4.slide Y así aparecio.....
   .sources Fuentes: 
       a(href="http://lists.gnupg.org/pipermail/gnupg-announce/2007q4/000268.html") "A Short History of the GNU Privacy Guard"
 
@@ -78,7 +81,7 @@ section.slide
   h3
     a(href="http://en.wikipedia.org/wiki/Werner_Koch") Werner Koch
   img(src="/images/Wernerkoch.jpg")
-  h4.slide Inicio el reemplaso de 
+  h4.slide Inicio el reemplazo de 
     u IDEA
     |  por 
     a(href="http://es.wikipedia.org/wiki/Blowfish") Blowfish
@@ -86,34 +89,34 @@ section.slide
     u RSA
     |  por
     a(href="http://es.wikipedia.org/wiki/Cifrado_ElGamal") Elgamal.
-  h4.slide Hizo muchas mas mejoras y en diciembre de 1997 publica 
+  h4.slide Hizo muchas más mejoras y en diciembre de 1997 publica 
     u G10.
     a(href="http://lists.gnupg.org/pipermail/gnupg-devel/1997-December/014131.html") [1]
   h4.slide El nombre 
     u G10
-    |  se le dio por el articulo 10 de la constitución alemana que habla de la  
+    |  se le dio por el artículo 10 de la constitución alemana que habla de la  
     u "libertad en telecomunicaciones".
   h4.slide En febrero de 1998 publican la version 0.2.8 bajo el nuevo nombre "Gnu Privacy Guard" (GPG).
   h4.slide Desde entonces Wener lidera el desarrollo de GPG.
 section.slide
-  h3 Despues de 15 años de hacking continuo, muchas cosas han pasado.
+  h3 Después de 15 años de hacking continuo, muchas cosas han pasado.
   hr
   ul
-    li.slide U.S.A. permitio que algunos hackers participaran del proyecto.
-    li.slide El Ministerio de Economia de alemania aporto bastante dinero al proyecto.
-    li.slide EL soporte de S/MIME para integracion con clientes de correo.
-    li.slide Nuevas caracteristicas y nuevas versiones.
-    li.slide Cientos de herramientas incluidas interfaces graficas han sido creadas.
-    li.slide La version publicada el 27 de marzo de 2012 fue la 2.0.19
+    li.slide U.S.A. permitió que algunos hackers participaran del proyecto.
+    li.slide El Ministerio de Economía de Alemania aporto bastante dinero al proyecto.
+    li.slide EL soporte de S/MIME para integración con clientes de correo.
+    li.slide Nuevas características y nuevas versiones.
+    li.slide Cientos de herramientas incluidas interfaces gráficas han sido creadas.
+    li.slide La versión publicada el 27 de marzo de 2012 fue la 2.0.19
       a(href="http://lists.gnupg.org/pipermail/gnupg-announce/2012q1/000314.html") [1]
 section.slide
   h1 Criptografía
 section.slide
-  h2 Criptografía Clasica
+  h2 Criptografía Clásica
   hr
   p Para cifrar mensajes usando este tipo de cifrado, simplemente generamos una llave para cifrar el mensaje.
   p El mensaje queda cifrado usando esta llave, para descifrarlo es necesario tener la llave.
-  p El proceso mas tedioso aca es hacer llegar la llave al destinatario del mensaje lo mas seguro posible.
+  p El proceso más tedioso aca es hacer llegar la llave al destinatario del mensaje lo más seguro posible.
   p De manera que si en el proceso alguien mas obtiene la llave, pues el cifrado no sirvio para nada.
   img(src="/images/Criptografiasimetrica.png")
 section.slide
@@ -125,7 +128,7 @@ section.slide
     li Esta llave se puede compartir con uno o muchas personas
     li No hay problema si alguien que no deseamos adquiere la llave pública
     li Puedo publicar esta llave en varios servidores
-    li Con esta llave las demas personas podran escribirme de manera cifrada.
+    li Con esta llave las demas personas podrán escribirme de manera cifrada.
   h3 Llave Privada
   ul
     li Esta llave es totalmente 
@@ -134,7 +137,7 @@ section.slide
     li No puedo publicarla en ningun lado y debo mantenerla en un lugar seguro.
     li Con esta llave podre descifrar los mensajes que me escriban usando la llave pública.
 section.slide
-  h1 ¿Como funciona?
+  h1 ¿Cómo funciona?
 section.slide
   img(src="/images/CriptografiaAsimetrica1.png")
 section.slide
