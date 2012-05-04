@@ -1,0 +1,464 @@
+section.slide
+  a(href="http://fcbosque.org")
+    img(src="/images/header-logotype.jpg", style="margin-top:20px;float:right;")
+  h2 Javascript del lado del servidor usando Node.js
+  hr
+  h3 Daniel Aristizabal Romero [cronopio]
+  h5 Laboratorio Tecnológico Fundación Casa del Bosque
+  img(src="/images/node_turtle.png")
+  
+  .sources(style="margin-top:-4em;")
+    h5
+      a(href="mailto:aristizabal.daniel@gmail.com") aristizabal.daniel@gmail.com
+      br
+      a(href="http://gplus.to/cronopio") www.gplus.to/cronopio
+      br
+      a(href="http://twitter.com/cronopio2") @cronopio2
+      br
+      a(href="http://github.com/cronopio")
+        img(src="/images/github.png", style="margin:10px")
+section.slide
+  h1 ¿Node.js?
+section.slide
+  h2 ¿Qué es Node.JS?
+  hr
+  p Entorno de programación orientado a eventos
+    sup
+      a(href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_dirigida_por_eventos") [1]
+    | , pensado para construir programas de red rápidos y escalables, 
+    | con modelos de entrada/salida sin bloqueo
+    sup
+      a(href="http://en.wikipedia.org/wiki/Asynchronous_I/O") [2]
+    | que hacen liviano y eficiente el entorno. Perfecto para
+    | aplicaciones en tiempo real y de datos intensivos.
+  ul
+    li
+      h3 JavaScript en Server - Side
+    li
+      h3 Construido sobre 
+        a(href="http://code.google.com/p/v8/") V8 
+        | (el motor de JS de Chrome)
+    li
+      h3 Orientado a eventos
+    li
+      h3 Similar a 
+        a(href="http://rubyeventmachine.com/") EventMachine 
+        | o 
+        a(href="http://twistedmatrix.com/") Twisted
+    li
+      h3 Sistema de modulos CommonJS
+    li
+      h3 Core escrito en C++, libreria estandar escrita en JS
+    li
+      h3 En 2009, 14 desarrolladores del core. Hoy 296
+  .sources Mas Info: 
+    a(href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_dirigida_por_eventos") [1]
+    | ,
+    a(href="http://en.wikipedia.org/wiki/Asynchronous_I/O") [2]
+section.slide
+  h1 ¿Y quién usa Node.js?
+section.slide
+  h2 En la industria.
+  hr
+  h3 Grandes compañias como...
+  img(src="/images/ebayLogo.jpg")
+  a(href="http://www.ebaytechblog.com/2011/11/30/announcing-ql-io/") Announcing ql.io
+  img(src="/images/linkedin.jpg")
+  a(href="http://venturebeat.com/2011/08/16/linkedin-node/") How LinkedIn used Node.js and HTML5 to build a better, faster app
+  img(src="/images/uberlogo.jpg")
+  a(href="https://www.uber.com/") https://www.uber.com/
+  img(src="/images/facebook-logo.jpg")
+section.slide
+  h2 En la industria.
+  hr
+  h3 Compañias un poco menos conocidas...
+  img(src="/images/joyentlogo.jpg")
+  img(src="/images/nodejitsu-logo.png")
+  img(src="/images/c9-logo.jpg")
+section.slide
+  h1 ESPERA!!
+    br
+    small ¿JS en Server-side?
+    br
+    .slide WTF?!
+section.slide
+  h1 Si!, Gracias a 
+    a(href="http://code.google.com/p/v8/") V8
+    br
+    sub y a Joyent ;)
+
+section.slide
+  h1 Orientado a Eventos.
+section.slide
+  h2 Bloqueo de I/O
+  hr
+  h3 Muchas aplicaciones web tienen código como este:
+  blockquote
+    span(style="color:#66CCFF") var 
+    span(style="color:#002EB8") $r 
+    |  = db.query(
+    span(style="color:#990000") 'select * from T'
+    | );
+    br
+    code(style="color:#009900")
+      | // puedo usar el 
+      span(style="color:#002EB8") $r
+    br
+    | echo 
+    span(style="color:#002EB8") $r 
+  h3 
+    a(href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_estructurada") Programación Estructurada.
+  h3 ¿Y qué hace el software mientras se hacen las consultas a la base de datos?
+section.slide
+  h1 En la mayoría de casos...
+    .slide sólo esperar la respuesta.
+section.slide
+  h2 Non-blocking de I/O
+  hr
+  h3 En el mundo de javascript el código luciría algo como:
+  blockquote
+    | db.query(
+    small(style="color:#990000") 'select * from T'
+    | , 
+    span(style="color:#002EB8") function 
+    | (r) {
+    br
+    code(style="color:#009900")
+      | // puedo usar el 
+      span(style="color:#002EB8") r
+    br
+    span(style="margin-left:1em") alert(
+    span(style="color:#002EB8") r
+    | );
+    br
+    | });
+    br
+    code(style="color:#009900")
+      | // el flujo del programa sigue
+    br
+    | alert(
+    small(style="color:#990000") 'Hola Mundo'
+    | );
+  h3
+    a(href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_dirigida_por_eventos") Programación controlada por eventos (event-driven).
+   
+section.slide
+  h1 El buen software puede ser 
+    br
+    em multi-tarea.
+section.slide
+  h1 Otros 
+    em hilos 
+    | de ejecución pueden correr mientras esperan. 
+section.slide
+  h1 ¿Es lo mejor que podemos hacer?
+section.slide
+  h1 Démosle una mirada a 
+    a(href="http://www.apache.org/") Apache 
+    | y 
+    a(href="http://nginx.org/") Nginx
+
+section.slide
+  h2 Apache vs Nginx
+  hr
+  h3 Memoria RAM vs Conexiones Concurrentes
+  img(src="/images/nginx-apache-memory.png")
+  .sources Fuentes: 
+    a(href="http://blog.webfaction.com/a-little-holiday-present")[1]
+section.slide
+  h2 Apache vs Nginx
+  hr
+  h3 ¿La diferencia?
+  ul
+    li.slide 
+      strong Apache 
+      | usa 
+      em un hilo por conexión.
+    li.slide
+      strong Nginx 
+      em no usa hilos. 
+      | Usa un bucle de eventos (event loop).
+  ul
+    li.slide Los cambios de 
+      em contexto 
+      | no son gratis.
+    li.slide Las pilas de ejecución de tareas requieren memoria.
+  ul
+    li.slide Para concurrencia masiva, 
+      mark no se puede 
+      | usar un hilo del sistema operativo por cada conexión.
+  ul
+    li.slide La concurrencia usando hilos, es una abstraccion con fugas.
+section.slide
+  h2 Concurrencia de hilos
+  hr
+  h3 Código como este:
+  blockquote
+    span(style="color:#66CCFF") var 
+    | r = db.query(
+    span(style="color:#990000") 'select * from T'
+    | );
+    br
+    code(style="color:#009900")
+      // uso el $r
+  h3 
+    mark Bloquea el proceso entero 
+    | o implica 
+    mark la ejecución de pilas de tareas.
+section.slide
+  h2 Concurrencia por Eventos
+  hr
+  h3 Pero código como este:
+  blockquote
+    | db.query(
+    span(style="color:#990000") "select ..."
+    | , 
+    span(style="color:#002EB8") function
+    | (r) {
+    br
+    code(style="color:#009900;margin-left:30px")
+      | // uso el r
+    br
+    | });
+  h3 Permite al programa regresar al bucle de eventos inmediatamente.
+  h3.slide ... y no necesita nada más.
+section.slide
+  h1 Asi es como debe hacerse la entrada/salida (I/O)
+section.slide
+  h1 ...mmm ¿bucle de eventos?, me suena a...
+    br
+    .slide JavaScript!
+section.slide
+  h2 JavaScript
+  hr
+  h3 JavaScript esta especialmente diseñado para ser usado como un bucle de eventos (event loop):
+  ul
+    li.slide Funciones anónimas, 
+      em closures.
+    li.slide Solo un 
+      em callback 
+      | al mismo tiempo.
+    li.slide Entrada/Salida (I/O) a través de eventos en el DOM.
+    li.slide La cultura del JavaScript normalmente usa programación orientada a eventos.
+    .slide
+      blockquote
+        | “Un lenguaje que no tenga todo, 
+        | es realmente fácil programarlo para que lo haga todo.”
+        br
+        em(style="margin-left: 3em")    – Dennis Ritchie
+section.slide
+  h1 Volvamos a Node.JS...
+section.slide
+  h2 Stack
+  hr
+  img(src="/images/Stack.png")
+section.slide
+  h1 Instalación.
+    br
+    small (en gnu/linux)
+section.slide
+  h2 Instalación
+  hr
+  h3 Dependencias:
+  ul
+    li
+      strong python  
+      small
+        em (recomendado 2.6, solo necesario cuando se compila)
+    li
+      strong libssl-dev 
+      small
+        em (si deseas usar SSL/TLS)
+section.slide
+  h2 Instalación
+  hr
+  h3 Debian:
+  pre
+    code
+      | root@host: ~ # echo deb http://ftp.us.debian.org/debian/ sid main > /etc/apt/sources.list.d/sid.list
+      | root@host: ~ # apt-get update
+      | root@host: ~ # apt-get install nodejs npm
+    .slide
+      code
+        | ### Opcional (y obligatorio para algunos modulos)
+    .slide
+      code
+        | root@host: ~ # apt-get install build-essential # Herramientas de compilación
+        | root@host: ~ # apt-get install nodejs-dev # Codigo de nodejs
+  h3 Ubuntu:
+  pre
+    code
+      | sudo apt-get install python-software-properties
+      | sudo add-apt-repository ppa:chris-lea/node.js
+      | sudo apt-get update
+      | sudo apt-get install nodejs npm
+    .slide
+      code
+        | ### De nuevo, opcional (y obligatorio para algunos modulos)
+    .slide
+      code
+        | sudo apt-get install build-essential # Herramientas de compilación
+        | sudo apt-get install nodejs-dev # Codigo de nodejs
+section.slide
+  h2 Instalación
+  hr
+  h3 Para mas distribuciones y/o sistemas operativos 
+    a(href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager") revise la wiki de node.
+  h3.slide ¿Windows?
+  h3.slide Para Windows cada vez son mas grandes los esfuerzos para que funcione bien, pero 
+    code node.js
+    |  tiene algunos principios bastante ligados con los Unix modernos.
+  h3.slide ¿MacOSX?
+  h3.slide
+    a(href="http://nodejs.org/dist/v0.6.15/node-v0.6.15.pkg") Instalador Oficial.
+    
+section.slide
+  h2 Instalación
+  hr
+  h3 Descargando las fuentes:
+  h4 Usando Git.
+  pre
+    code
+       | git clone git://github.com/joyent/node.git
+       | cd node/
+       | git checkout v0.6.15
+  h4 Descargando un tarball.
+  pre
+    code
+      | wget -c https://github.com/joyent/node/tarball/v0.6.15 -O node-0.6.15.tar.gz
+      | tar zxvf node-0.6.15.tar.gz
+      | cd joyent-node-d90d46f/
+  .sources
+    a(href="https://github.com/joyent/node/wiki/Installation") Guía de Instalación Oficial 
+    | -  
+    a(href="http://apptob.org/") Script para instalación en Ubuntu.
+section.slide
+  h2 Instalación
+  hr
+  h3 Construcción:
+  h4 Como usuario sin privilegios.
+  pre
+    code
+      | mkdir ~/local
+      | ./configure --prefix=~/local
+      | make -j2 # dependiendo del numero de cores.
+      | make install
+      | echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc
+      | source ~/.bashrc
+  h4 Como root.
+  pre
+    code
+      | su -
+      | ./configure
+      | make -j2 # dependiendo del numero de cores.
+      | make install
+section.slide
+  h2 Instalación
+  hr
+  h3 Node Package Manager (NPM)
+  pre
+    code
+      | curl http://npmjs.org/install.sh | sh
+  h3 Instalando módulos o paquetes.
+  h4 de manera local
+  pre
+    code
+      | npm install express
+  h4 de manera global
+  pre
+    code npm install 
+      strong -g 
+      | express
+  .sources
+    a(href="http://www.npmjs.org/") Página NPM
+section.slide
+  h1 Ok, ¿y ahora?
+section.slide
+  h2 Ecosistema de Módulos
+  hr
+  h3 Busqueda en 
+    a(href="http://search.npmjs.org/") search.npmjs.org
+  h3 O usando CLI  (9101 paquetes registrados.)
+  pre
+    code
+      | npm search hook.io   # tema o tag a buscar
+  hr
+  h4 Paquetes más usados.
+  img(src="/images/pkg-mas-usados.png")
+section.slide
+  h2 Ecosistema de Módulos
+  hr
+  h3 
+    a(href="http://toolbox.no.de/") node-toolbox
+  p El 
+    strong  node-toolbox 
+    |  es un sitio donde podemos encontrar los paquetes registrados en NPM ordenados por categorías. También tiene links a sitios de interés y listados por popularidad de paquetes. La aplicación está desplegada en las
+    em Smart Machines 
+    | de  
+    a(href="http://no.de/")  Joyent 
+    |  y su url es:
+    a(href="http://toolbox.no.de/") toolbox.no.de
+  h3 
+    a(href="https://github.com/joyent/node/wiki/modules") Wiki de Node
+  p El wiki de node tiene un listado de módulos compatibles con node.js.
+  h3
+    a(href="http://nodejsmodules.org/") node.js module rankings
+  p Listado de modulos de node.js ordenados por su ranking. 
+section.slide
+  h1 ¿Más Preguntas?
+section.slide
+  h1 Demos!!!
+    br
+    | :-)
+section.slide
+  h2 Hola Mundo.
+  hr
+  script(src="/javascripts/gists/sys.js")
+section.slide
+  h2 Callback
+  script(src="/javascripts/gists/exit.js")
+section.slide
+  h2 Socket TCP
+  hr
+  h3 Servidor
+  script(src="/javascripts/gists/tcp.js")
+  h3 Cliente
+  pre
+    code telnet localhost 8000
+section.slide
+  h2 Consulta de dominios.
+  hr
+  h3 Servidor
+  script(src="/javascripts/gists/dns.js")
+  h3 Cliente
+  pre
+    code
+     | telnet localhost 8000
+     | ip fcbosque.org
+     | salir
+section.slide
+  h2 Servidor Web
+  hr
+  h3 Servidor
+  script(src="/javascripts/gists/http.js")
+  h3 Cliente
+  pre
+    code http://localhost:4000/
+section.slide
+  a(href="https://github.com/cronopio/nodeSlides")
+    img(style="position: absolute; top: 0; right: 0; border: 0;", src="/images/github-green.png", alt="Fork me on GitHub")
+  h1 Gracias!!
+  .sources
+    h3 Daniel Aristizabal Romero
+    hr
+    h4 Laboratorio Tecnológico Fundación Casa del Bosque
+    a(href="http://fcbosque.org")
+      img(src="/images/header-logotype.jpg", style="margin:10px;")
+    h5
+      a(href="mailto:aristizabal.daniel@gmail.com") aristizabal.daniel@gmail.com 
+      | - 
+      a(href="http://gplus.to/cronopio") gplus.to/cronopio 
+      | - 
+      a(href="http://twitter.com/cronopio2") @cronopio2 
+      a(href="http://github.com/cronopio")
+        img(src="/images/github.png", style="margin:10px")
