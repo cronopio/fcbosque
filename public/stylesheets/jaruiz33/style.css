@@ -201,10 +201,10 @@ html {
   font-size: 4.5em;
   font-weight: bold;
   text-align: center;
-  padding-top: 1em;
+  padding-top: 5em;
 }
 .csstransforms .slide h1 {
-  padding: 0 48px;
+  padding: -1px;
   position: absolute;
   left: 0;
   right: 0;
@@ -217,9 +217,9 @@ html {
 }
 .slide h2 {
   font-size: 2.25em;
-  font-weight: bold;
+
   padding-top: .5em;
-  margin: 0 0 .66666em 8em;
+
   border-bottom: 3px solid #888;
 }
 .slide h3 {
@@ -520,7 +520,7 @@ body.deck-container .deck-status {
 }
 
 .deck-container > .slide {
-  background: url("/images/fondo2.jpg") no-repeat scroll 100% 100% transparent;
+  background: url("/images/jaruiz33/mozilla-firefox-azul-wallpapers.jpg") no-repeat scroll 100% 100% transparent;
 }
 
 .deck-container iframe {

@@ -83,6 +83,7 @@ app.get('/artedigital', function(req, res) {
 app.get('/express-framework', function(req, res) {
   res.render('flav/index', { layout: 'flav/layout' });
 });
+
 app.get('/seguridad-con-firefox', function(req, res) {
   res.render('jaruiz33/index', { layout: 'jaruiz33/layout' });
 });

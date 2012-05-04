@@ -22,13 +22,13 @@
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
 }
 .deck-container .slide h1, .deck-container .slide h2, .deck-container .slide h3, .deck-container .slide h4, .deck-container .slide h5, .deck-container .slide h6 {
-  font-family: "Hoefler Text", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-family: Averia Libre;
 }
 .deck-container .slide h1 {
-  color: #450a26;
+  color: #e11509;
 }
 .deck-container .slide h2 {
-  color: #450a26;
+  color: #e11509;
   border-bottom: 0;
 }
 .cssreflections .deck-container .slide h2 {
