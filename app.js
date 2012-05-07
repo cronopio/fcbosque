@@ -88,6 +88,10 @@ app.get('/gpg', function (req, res) {
   res.render('cronopio/gpg/index', { layout: 'cronopio/gpg/layout' });
 });
 
+app.get('/seguridad-con-firefox', function(req, res) {
+  res.render('jaruiz33/index', { layout: 'jaruiz33/layout' });
+});
+
 app.listen(process.env.PORT || 3000);
 
 app.on('listening', function () {
