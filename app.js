@@ -81,7 +81,7 @@ app.get('/artedigital', function(req, res) {
 });
 
 app.get('/express-framework', function(req, res) {
-  res.render('flav/index', { layout: 'flav/layout' });
+  res.render('flav/express/index', { layout: 'flav/express/layout' });
 });
 
 app.get('/gpg', function (req, res) {
@@ -90,6 +90,10 @@ app.get('/gpg', function (req, res) {
 
 app.get('/seguridad-con-firefox', function(req, res) {
   res.render('jaruiz33/index', { layout: 'jaruiz33/layout' });
+});
+
+app.get('/deb-rpm', function (req, res) {
+  res.render('flav/deb-rpm/index', { layout: 'flav/deb-rpm/layout'});
 });
 
 app.listen(process.env.PORT || 3000);
