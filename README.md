@@ -25,6 +25,9 @@ Especial agradecimiento para [Nodejitsu](http://nodejitsu.com/) por permitirnos 
 * La web como plataforma de desarrollo
 * Arte Digital para la No Violencia contra la Mujer
 * Express uno de los frameworks para desarrollo Web en NodeJS
+* Criptografía para seres humanos. Usando GPG y GNU/Linux
+* Seguridad con Firefox
+* Paquetes deb y rpm, gestión e interfaces apt, aptitude y synaptic
 
 ## Como Agregar una charla?
 Primero que todo necesita tener un ambiente con [Node.js](http://www.nodejs.org/) instalado y funcionando correctamente con [NPM](http://npmjs.org/)
