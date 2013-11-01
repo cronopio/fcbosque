@@ -28,6 +28,7 @@ Especial agradecimiento para [Nodejitsu](http://nodejitsu.com/) por permitirnos 
 * Criptografía para seres humanos. Usando GPG y GNU/Linux
 * Seguridad con Firefox
 * Paquetes deb y rpm, gestión e interfaces apt, aptitude y synaptic
+* Introduccion a Git
 
 ## Como Agregar una charla?
 Primero que todo necesita tener un ambiente con [Node.js](http://www.nodejs.org/) instalado y funcionando correctamente con [NPM](http://npmjs.org/)
