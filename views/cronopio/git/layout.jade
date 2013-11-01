@@ -1,0 +1,49 @@
+!!!
+html
+  head
+    meta(charset="utf-8")
+    title Introducción a Git
+    meta(name="viewport", content="width=1024, user-scalable=yes")
+    link(rel="stylesheet", href="/stylesheets/cronopio/style.css")
+    link(rel="stylesheet", href="/stylesheets/cronopio/horizontal-slide.css")
+    link(rel="stylesheet", href="/stylesheets/cronopio/web-2.0.css")
+    link(rel="icon", type="image/png", href="/images/favicon.png")
+    script(src="/javascripts/modernizr.custom.js")
+  body(class="deck-container")
+    .deck-remote-join-message
+      p Hay una presentacion disponible, desea ingresar a verla?
+      p.deck-remote-links
+        a.deck-remote-ignore-link(href="#") Cancelar
+        |
+        a.deck-remote-join-link(href="#") Ingresar
+    .deck-remote-leave-message
+      p La presentacion ha terminado.
+      p.deck-remote-links
+        a.deck-remote-close-link(href="#") Cerrar
+    
+    .deck-remote-master-message
+      p La clave es ...
+      p.deck-remote-master-feedback
+      form.deck-remote-master-form(action="")
+        p
+          input.deck-remote-password(type="password")
+        br
+        p.deck-remote-links
+          input(type="submit", value="Iniciar Sesion") 
+    != body
+    a.deck-prev-link(title="Anterior", href="#") &#8592;
+    a.deck-next-link(title="Siguiente", href="#") &#8594;
+    p.deck-status
+      span.deck-status-current
+      /
+      span.deck-status-total
+  script(src="/javascripts/jquery-1.6.4.min.js")
+  script(src="/javascripts/deck/deck.core.js")
+  script(src="/javascripts/deck/deck.status.js")
+  script(src="/javascripts/deck/deck.navigation.js")
+  script(src="/javascripts/deck/deck.remote.js")
+  script
+    $(function() {
+      $.deck('.slide');
+      $.deck('remote');
+    });

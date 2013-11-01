@@ -1,6 +1,6 @@
 {
   "name": "nodeSlides",
-  "version": "0.0.9",
+  "version": "0.0.9-1",
   "private": true,
   "dependencies": {
     "express": "2.5.x",
@@ -9,7 +9,7 @@
   },
   "subdomain": "fcbosque",
   "scripts": {
-    "start": "app.js"
+    "start": "node app.js"
   },
   "engines": {
     "node": "v0.6.x"
