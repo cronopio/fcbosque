@@ -12,6 +12,30 @@ const jadeSlides = [
   {
     "url":"nodejs",
     "directory": "cronopio/nodejs"
+  },
+  {
+    "url": "seguridad-con-firefox",
+    "directory": "jaruiz33"
+  },
+  {
+    "url": "artedigital",
+    "directory": "lili"
+  },
+  {
+    "url": "express-framework",
+    "directory": "flav/express"
+  },
+  {
+    "url":"gpg",
+    "directory": "cronopio/gpg"
+  },
+  {
+    "url": "git",
+    "directory": "cronopio/git"
+  },
+  {
+    "url": "deb-rpm",
+    "directory": "flav/deb-rpm"
   }
 ]
 
