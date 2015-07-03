@@ -1,17 +1,24 @@
 {
-  "name": "nodeSlides",
-  "version": "0.0.11",
-  "private": true,
-  "dependencies": {
-    "express": "2.5.x",
-    "jade": "0.x.x",
-    "socket.io": "0.9.x"
-  },
-  "subdomain": "fcbosque",
+  "name": "fcbosque.js.org",
+  "version": "1.0.0",
+  "description": "Diapositivas creadas por la FCBosque",
+  "main": "bin/run.js",
   "scripts": {
-    "start": "node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "engines": {
-    "node": "v0.8.x"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cronopio/fcbosque.git"
+  },
+  "keywords": [
+    "fcbosque",
+    "slides",
+    "colombia"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cronopio/fcbosque/issues"
+  },
+  "homepage": "https://github.com/cronopio/fcbosque#readme"
 }
