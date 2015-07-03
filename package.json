@@ -4,7 +4,7 @@
   "description": "Diapositivas creadas por la FCBosque",
   "main": "bin/run.js",
   "scripts": {
-    "generate": "babel-node bin/run.js",
+    "generate": "babel-node bin/run.js && npm run arpunk-html",
     "start": "npm run generate; http-server public/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "copy-guide": "cp -r ./public ./.public",
@@ -13,6 +13,7 @@
     "git-stage": "npm run copy-guide && npm run git-co && npm run paste-guide",
     "git-commit": "git add -A . && git commit -a -m 'gh-pages update'",
     "git-push": "git push origin gh-pages --force && git checkout master",
+    "arpunk-html": "cp views/arpunk/index.html public/web-dev.html",
     "deploy": "npm run generate && npm run git-stage && npm run git-commit && npm run git-push"
   },
   "repository": {
