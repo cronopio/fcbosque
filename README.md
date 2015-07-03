@@ -22,6 +22,20 @@ Algunas diapositivas usan las siguientes herramientas:
 * Paquetes deb y rpm, gestión e interfaces apt, aptitude y synaptic
 * Introduccion a Git
 
+## Correr localmente
+
+Debes tener instalado `git` y clonar este repositorio, luego entra al directorio del projecto para ejecutar el siguiente:
+
+```bash
+$ npm install
+```
+
+Ese comando instalara las dependencias y con este correra localmente:
+
+```bash
+$ npm start
+```
+
 ## Agradecimientos.
 Thanks to [Caleb Troughton](https://github.com/imakewebthings) for bulding [deck.js](http://imakewebthings.github.com/deck.js/), a modern presentation tool.
  
