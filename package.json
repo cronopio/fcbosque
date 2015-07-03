@@ -1,0 +1,38 @@
+{
+  "name": "fcbosque.js.org",
+  "version": "1.0.0",
+  "description": "Diapositivas creadas por la FCBosque",
+  "main": "bin/run.js",
+  "scripts": {
+    "generate": "babel-node bin/run.js",
+    "start": "npm run generate; http-server public/",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy-guide": "cp -r ./public ./.public",
+    "git-co": "git checkout gh-pages && git reset --hard origin/gh-pages",
+    "paste-guide": "cp -r ./.public/* .. && rm -rf ./.public",
+    "git-stage": "npm run copy-guide && npm run git-co && npm run paste-guide",
+    "git-commit": "git add -A . && git commit -a -m 'gh-pages update'",
+    "git-push": "git push origin gh-pages --force && git checkout master",
+    "deploy": "npm run generate && npm run git-stage && npm run git-commit && npm run git-push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cronopio/fcbosque.git"
+  },
+  "keywords": [
+    "fcbosque",
+    "slides",
+    "colombia"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cronopio/fcbosque/issues"
+  },
+  "homepage": "https://github.com/cronopio/fcbosque#readme",
+  "dependencies": {
+    "babel": "^5.6.14",
+    "http-server": "^0.8.0",
+    "jade": "^0.35.0"
+  }
+}
